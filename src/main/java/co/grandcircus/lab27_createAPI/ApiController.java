@@ -84,7 +84,7 @@ public class ApiController {
 	@GetMapping("/movies/random")
 	Movie random() {
 		List<Movie> movies = repo.findAll();
-		int random = (int)(Math.random() * movies.size() + 1);
+		int random = (int)(Math.random() * movies.size()); //shouldn't need +1 in this instance
 		
 		return movies.get(random);
 	}
